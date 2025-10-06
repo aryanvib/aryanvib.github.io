@@ -5,7 +5,7 @@ permalink: /
 subtitle: Graduate Student
 profile:
   align: right
-  image: /../IMG_3076.jpeg
+  image: 
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>College Park, Maryland</p>
@@ -19,7 +19,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: false
+  enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
