@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Machine Learning enthuasiast | MSCS @ UMD College Park | B.Tech @ IIT Bombay | Ex: Data Science @ AMEX, Research Intern @ Brown University
+subtitle: Machine Learning enthuasiast. MSCS @ UMD College Park. B.Tech @ IIT Bombay. Ex: Data Science @ AMEX, Research Intern @ Brown University
 
 profile:
   align: right
