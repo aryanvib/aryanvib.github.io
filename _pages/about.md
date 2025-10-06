@@ -5,7 +5,7 @@ permalink: /
 subtitle: Graduate Student
 profile:
   align: right
-  image: /IMG_3076.jpeg
+  image: /../IMG_3076.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>College Park, Maryland</p>
