@@ -183,6 +183,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - INSTALL.md
+  - news.md
   - LICENSE
   - lighthouse_results/
   - package.json
