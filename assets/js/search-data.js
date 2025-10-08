@@ -433,16 +433,19 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-joined-bessa-research-group-as-a-research-intern-at-brown-university",
+          title: 'Joined Bessa Research Group as a Research Intern at Brown University.',
           description: "",
           section: "News",},{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-graduated-b-tech-with-hons-from-iit-bombay-with-dual-minor-degrees-in-artificial-intelligence-and-computer-science",
+          title: 'Graduated B. Tech (with Hons.) from IIT Bombay with dual minor degrees in...',
+          description: "",
+          section: "News",},{id: "news-joined-as-a-ms-cs-graduate-student-at-umd-college-park",
+          title: 'Joined as a MS CS graduate student at UMD College Park!',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
