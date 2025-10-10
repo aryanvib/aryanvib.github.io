@@ -436,8 +436,8 @@ ninja.data = [{
             },},{id: "news-joined-bessa-research-group-as-a-research-intern-at-brown-university",
           title: 'Joined Bessa Research Group as a Research Intern at Brown University.',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-announcement-2",
+          title: 'Announcement_2',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
