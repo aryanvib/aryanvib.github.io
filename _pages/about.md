@@ -2,13 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: Graduate Student
+subtitle: 
 profile:
   align: right
   image: 
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>College Park, Maryland</p>
+  more_info:
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -23,7 +22,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-Machine Learning enthuasiast. MSCS UMD College Park. B.Tech IIT Bombay. Ex: Data Science AMEX, Research Intern Brown University.
+MSCS **UMD College Park**. B.Tech **IIT Bombay**. 
+Ex: Data Science **AMEX**, Research Intern **Brown University**.
 
 I am a MSCS graduate student in the [Department of Computer Science](https://www.cs.umd.edu/) at the University of Maryland (UMD), College Park. My recent work has focused on **multimodal AI**, more specifically in the space of **Deep Generative Models** (Diffusion Models, GANs) and **model understanding**. Currently, I'm working with [Prof. Dinesh Manocha](https://www.cs.umd.edu/people/dmanocha) (GAMMA Lab) and [Prof. Ramani Duraiswami](https://www.cs.umd.edu/people/ramanid) (PIRL Lab). 
 
