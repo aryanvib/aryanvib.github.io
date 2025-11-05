@@ -436,12 +436,10 @@ ninja.data = [{
             },},{id: "news-joined-bessa-research-group-as-a-research-intern-at-brown-university",
           title: 'Joined Bessa Research Group as a Research Intern at Brown University.',
           description: "",
-          section: "News",},{id: "news-announcement-2",
-          title: 'Announcement_2',
+          section: "News",},{id: "news-joined-the-model-risk-and-management-group-as-a-data-science-intern-at-american-express",
+          title: 'Joined the Model Risk and Management Group as a Data Science Intern at...',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-graduated-b-tech-with-hons-from-iit-bombay-with-dual-minor-degrees-in-artificial-intelligence-and-computer-science",
+          section: "News",},{id: "news-graduated-b-tech-with-hons-from-iit-bombay-with-dual-minor-degrees-in-artificial-intelligence-and-computer-science",
           title: 'Graduated B. Tech (with Hons.) from IIT Bombay with dual minor degrees in...',
           description: "",
           section: "News",},{id: "news-joined-as-a-ms-cs-graduate-student-at-umd-college-park",
