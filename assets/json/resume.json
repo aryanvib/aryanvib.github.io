@@ -23,11 +23,7 @@
       "startDate": "2024-05-01",
       "endDate": "2024-07-31",
       "summary": "Model Interpretability (MI): Research & Reliability Assessment. Part of the Model Risk Management Team, enforcing model risk compliance frameworks.",
-      "highlights": [
-        "Leveraged domain expertise to analyze AMEX-internal MI methods - SHAP & PDP in explaining model predictions",
-        "Innovated and tested an Individual Conditional Effects (ICE) - based framework to quantify confidence in MI techniques",
-        "PDP & ALE - on AXGBoost Global Corporate credit risk (6Mn+ data) & GLM AU attrition risk models (4Mn+ data)"
-      ]
+      "highlights": []
     },
     {
       "name": "Brown University, USA",
@@ -36,10 +32,7 @@
       "startDate": "2023-05-01",
       "endDate": "2023-08-31",
       "summary": "GATOR: Gradient-Agnostic Topology Optimization Repository. Generative modelling for topology optimization. Guide: Prof. M. Bessa, School of Engineering, Brown University.",
-      "highlights": [
-        "Deployed a TopoDiff-GUIDED with 0.18 Vol. Fraction Error, 0.73 Load Violation & 0.04 Floating Material in PyTorch",
-        "Integrated gradient-free optimizers - Genetic Algorithms into a pipeline for generating multiple topologies using evosax"
-      ]
+      "highlights": []
     },
     {
       "name": "Indian Institute of Technology, Bombay",
@@ -47,10 +40,8 @@
       "url": "https://www.iitb.ac.in/",
       "startDate": "2024-01-01",
       "endDate": "2024-05-31",
-      "summary": "Part of a 100+ member team aiding course logistics & evaluation, Instructor: Prof. S. Kalyankrishnan.",
-      "highlights": [
-        "Academically Mentored 25+ freshmen by conducting weekly laboratory sessions, problem-solving and evaluation"
-      ]
+      "summary": "Instructor: Prof. S. Kalyankrishnan.",
+      "highlights": []
     }
   ],
   "volunteer": [],
@@ -71,7 +62,7 @@
       "location": "Mumbai, MH, India",
       "url": "https://www.iitb.ac.in/",
       "area": "Mechanical Engineering",
-      "studyType": "Bachelor of Technology with Honours",
+      "studyType": "Bachelor of Technology (with Honours) with dual minors",
       "startDate": "2021-07-01",
       "endDate": "2025-05-31",
       "score": "GPA: 9.53/10",
@@ -87,7 +78,7 @@
       "date": "",
       "awarder": "Indian Institute of Technology, Bombay",
       "url": "",
-      "summary": "Awarded for exceptional research on Continual Anomaly Detection."
+      "summary": "Awarded for exceptional research under Prof. Biplab Banerjee."
     }
   ],
   "certificates": [],
@@ -168,11 +159,7 @@
     {
       "name": "Multimodal Generation & Understanding",
       "summary": "GAMMA Lab x PIRL Lab, UMD, USA. Building multimodal Al for audio-visual understanding & video + music generation. Guide: Prof. Manocha, Prof. Duraiswami.",
-      "highlights": [
-        "Developing video-to-music generation models for enhanced temporal and cultural alignment on HarmonySet dataset",
-        "Participating in ICASSP '26 Cadenza Challenge: Predicting musical lyric intelligibility - improving auditory accessibility",
-        "Curating an Omni-modal benchmark (NVIDIA) with explicit multi-modal dependencies to assess audio-visual understanding"
-      ],
+      "highlights": [],
       "startDate": "2025-08-01",
       "endDate": "",
       "url": ""
@@ -180,12 +167,7 @@
     {
       "name": "Continual Anomaly Detection",
       "summary": "Visual Al Lab, UK x Visual Computing Lab, IITB, India. Enhancing anomaly detetcion in evolving datasets.",
-      "highlights": [
-        "Under review at ICLR '26",
-        "Awarded Undergraduate Research Award",
-        "Developed CSAD-VAE using generative replay with outlier rejection outperforming joint training upper baseline",
-        "Innovated DiT-AD (0.635 AUC) outperforming conventional AD methods on Mini-Imagenet, proving scalability"
-      ],
+      "highlights": [],
       "startDate": "2023-12-01",
       "endDate": "2025-09-30",
       "url": ""
@@ -194,10 +176,7 @@
       "name": "SeDriCa (Self-driving car)",
       "summary": "Team Manager. India's first self-driving car, customized for Indian roads.",
       "highlights": [
-        "Received sponsorship of INR 4 Mn+ from NVIDIA & UMIC",
-        "Spearheaded hardware testing of a fully-functional autonomous vehicle with custom drive-by-wire & software in ROS",
-        "Finetuned YOLOv5 (mAP0.5: 1, MAP0.5:0.95 0.86) for object detection on 1000+ curated tyres, mannequins and barrels"
-      ],
+        "Received sponsorship of INR 4 Mn+ from NVIDIA & UMIC"],
       "startDate": "2022-03-01",
       "endDate": "2024-05-31",
       "url": ""
@@ -205,12 +184,7 @@
     {
       "name": "Audio-Visual (AV) Grounding & Discrete Speech Tokens for ASR",
       "summary": "CSALT Lab, IIT Bombay. Developed AV alignment models for video segmentation + AV retrieval & improved speech recognition using audio codecs.",
-      "highlights": [
-        "Designed IOU-based alignment loss and background activation suppression loss for segmentation on PlacesAudio dataset",
-        "Achieved 8%↑ in Image-to-Audio (12A) & 21%↑ in A21 retrieval, 3%↑ in mAP on ADE20K Speech-prompted dataset",
-        "Trained code-based ASR models (DAC, Discrete HuBERT, Speech Tokenizer) on LibriSpeech-100hr corpus in Speechbrain",
-        "Reduced WER by 11%↓ on test-clean & 8.5%↓ on test-other (Libri Speech-100) through selective use of DAC's RVQ layers"
-      ],
+      "highlights": [],
       "startDate": "2024-01-01",
       "endDate": "2025-05-31",
       "url": ""
@@ -218,10 +192,7 @@
     {
       "name": "AI-Generated Artifact Detection & Explanation Generation",
       "summary": "Adobe Research. Part of Inter-IIT Tech Meet. Developing interpretable authenticity verification using vision-language models.",
-      "highlights": [
-        "Performed QLoRa fine-tuning on Qwen2-VL on explanations dataset curated using GPT-4 & Claude-3 API",
-        "Implemented tree of thoughts framework to structure VLM reasoning & improve artifact detection (0.72 F1 score)"
-      ],
+      "highlights": [],
       "startDate": "2024-11-01",
       "endDate": "2024-12-31",
       "url": ""
