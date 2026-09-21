@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated B. Tech (with Hons.) from IIT Bombay with dual minor degrees in Artificial Intelligence and Computer Science
+Graduated B. Tech (with Hons.) from IIT Bombay with dual minor degrees in Artificial Intelligence and Computer Science.

@@ -1,20 +1,16 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+<div class="post about-screen">
+  {% if page.subtitle %}
+    <header class="post-header">
+      <p class="desc">{{ page.subtitle }}</p>
+    </header>
+  {% endif %}
 
   <article>
+    <div class="intro-screen">
+      <div class="intro-inner">
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
@@ -35,15 +31,56 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
+        {% if page.social %}
+          <div class="social profile-social">
+            <div class="contact-icons">{% include social.liquid %}</div>
+            {% if site.contact_note %}
+              <div class="contact-note">{{ site.contact_note }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if page.affiliations %}
+          <div class="affiliations">
+            <div class="affil-row">
+              <a href="https://www.umd.edu/" target="_blank" rel="noopener" title="University of Maryland">
+                <img src="{{ '/assets/img/logos/umd.png' | relative_url }}" class="logo-seal" alt="University of Maryland">
+              </a>
+              <a href="https://www.iitb.ac.in/" target="_blank" rel="noopener" title="IIT Bombay">
+                <img src="{{ '/assets/img/logos/iitb.png' | relative_url }}" class="logo-seal" alt="IIT Bombay">
+              </a>
+              <a href="https://www.brown.edu/" target="_blank" rel="noopener" title="Brown University">
+                <img src="{{ '/assets/img/logos/brown.png' | relative_url }}" class="logo-mono logo-crest" alt="Brown University">
+              </a>
+              <a href="https://www.dolby.com/" target="_blank" rel="noopener" title="Dolby Laboratories">
+                <img src="{{ '/assets/img/logos/dolby.png' | relative_url }}" class="logo-mono logo-symbol" alt="Dolby Laboratories">
+              </a>
+              <a href="https://www.centific.com/" target="_blank" rel="noopener" title="Centific">
+                <img src="{{ '/assets/img/logos/centific.svg' | relative_url }}" class="logo-mono logo-symbol" alt="Centific">
+              </a>
+              <a href="https://www.americanexpress.com/" target="_blank" rel="noopener" title="American Express">
+                <img src="{{ '/assets/img/logos/amex.png' | relative_url }}" class="logo-square" alt="American Express">
+              </a>
+            </div>
+          </div>
+        {% endif %}
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="intro-text">
+      <h1 class="intro-name">
+        {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
+      </h1>
+      {{ content }}
+    </div>
+
+
+      </div>
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -51,7 +88,7 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest posts</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -59,18 +96,9 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected publications</a>
       </h2>
       {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
     {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}

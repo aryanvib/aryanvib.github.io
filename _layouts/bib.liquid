@@ -225,7 +225,7 @@
           <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Supp</a>
         {% endif %}
       {% endif %}
-      {% if entry.video and site.enable_video_embedding %}
+    {% if entry.video and site.enable_video_embedding %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Video</a>
       {% elsif entry.video %}
         <a href="{{ entry.video }}" class="btn btn-sm z-depth-0" role="button">Video</a>
@@ -367,6 +367,28 @@
       <div class="abstract hidden">
         <div style="text-align: center;">{% include video.liquid path=entry.video class="img-fluid rounded z-depth-1" controls=true %}</div>
       </div>
+    {% endif %}
+
+    {% if entry.abstract or entry.website %}
+    <!-- Revealed on hover: abstract text and a live project-page window -->
+    <div class="pub-hover d-print-none">
+    <div class="pub-hover-inner">
+    {% if entry.abstract %}
+    <p class="pub-hover-abstract">{{ entry.abstract }}</p>
+    {% endif %}
+    {% if entry.website %}
+    <a class="pub-hover-preview" href="{{ entry.website }}" target="_blank" rel="noopener" aria-label="{{ entry.title }} project page">
+    <span class="preview-frame">
+    {% if entry.preview_shot %}
+    <img class="preview-shot" src="{{ entry.preview_shot | prepend: '/assets/img/venues/' | relative_url }}" alt="{{ entry.title }} project page">
+    {% else %}
+    <iframe src="{{ entry.website }}" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="{{ entry.title }} project page preview"></iframe>
+    {% endif %}
+    </span>
+    </a>
+    {% endif %}
+    </div>
+    </div>
     {% endif %}
   </div>
 </div>

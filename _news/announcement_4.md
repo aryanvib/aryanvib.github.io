@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined as a MS CS graduate student at UMD College Park!
+Joined as a MS CS graduate student at UMD College Park.

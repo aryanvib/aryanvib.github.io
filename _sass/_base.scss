@@ -4,6 +4,866 @@
 
 // Typography
 
+html {
+  font-size: 17.5px; // base type scale (theme default is 16px)
+}
+
+// Intro fills the first screen; news and everything below start under the fold.
+// Inline company logos in the news list
+.news-logo {
+  height: 0.95em;
+  width: auto;
+  background: #fff;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 0.3em;
+  vertical-align: -0.18em;
+}
+
+// Affiliation logos, grouped in one soft-edged panel.
+// The panel stays white in both themes so the dark monochrome marks stay legible.
+.affiliations {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+
+  .affil-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  // One hover treatment for every mark: same rest opacity, same lift, same
+  // timing. Opacity lives on the link only, so the dark-mode filter below
+  // cannot stack a second opacity on some logos and not others.
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.82;
+    transition:
+      opacity 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a {
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover,
+      &:focus-visible {
+        transform: none;
+      }
+    }
+  }
+
+  // In dark mode the black marks render as white silhouettes so they read on
+  // the dark page. Amex keeps its own colour (already light-on-blue).
+  html[data-theme="dark"] & .logo-mono {
+    filter: brightness(0) invert(1);
+  }
+
+  // Heights are per aspect ratio so every mark reads at a similar visual weight.
+  img {
+    width: auto;
+    display: block;
+  }
+
+  .logo-seal {
+    height: 36px; // square seals (UMD, IIT Bombay)
+  }
+
+  .logo-square {
+    height: 31px; // square block mark (Amex)
+  }
+
+  .logo-crest {
+    height: 40px; // tall crest (Brown)
+  }
+
+  .logo-symbol {
+    height: 26px; // compact symbols (Dolby double-D, Centific mark)
+  }
+}
+
+@media (max-width: 575px) {
+  .affiliations {
+    justify-content: center;
+    gap: 1rem 1.2rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+// Theme toggle: fade between sun / moon / system glyphs
+#light-toggle {
+  i {
+    transition:
+      color 0.25s ease-in-out,
+      opacity 0.25s ease-in-out;
+  }
+
+  &:hover i {
+    color: var(--global-theme-color);
+  }
+}
+
+// Name heading at the top of the intro page
+.intro-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 575px) {
+  .intro-name {
+    font-size: 2rem;
+  }
+}
+
+// Service page entries: smaller type, tighter leading, less space between lines.
+.service-list {
+  font-size: 0.92rem;
+  line-height: 1.45;
+
+  p {
+    margin-bottom: 0.3rem;
+  }
+
+  ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.1rem;
+  }
+
+  li {
+    margin-bottom: 0.3rem;
+  }
+}
+
+h2.heading-sm + .service-list {
+  margin-top: 0.3rem;
+}
+
+// Keep the entry's buttons (Abs / arXiv / Website) on one line.
+.publications .links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.3rem;
+
+  .btn {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 575px) {
+  .publications .links {
+    flex-wrap: wrap;
+  }
+}
+
+// Publications: hovering an entry opens it vertically, revealing the abstract
+// and a live window onto the project page.
+.publications {
+  li {
+    .pub-hover {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+        opacity 0.3s ease-in-out;
+    }
+
+    &:hover .pub-hover,
+    &:focus-within .pub-hover {
+      max-height: 520px;
+      opacity: 1;
+    }
+  }
+
+  // Below the Abs / arXiv / Website row: project window on the left,
+  // abstract on the right.
+  .pub-hover-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 0.6rem 0 0.2rem;
+  }
+
+  .pub-hover-abstract {
+    flex: 1 1 auto;
+    min-width: 0;
+    order: 2;
+    margin: 0;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+  }
+
+  .pub-hover-preview {
+    flex: 0 0 320px;
+    order: 1;
+    display: block;
+    text-decoration: none;
+
+    .preview-frame {
+      position: relative;
+      display: block;
+      width: 320px;
+      height: 203px;
+      overflow: hidden;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 8px;
+      background: #fff;
+      transition: border-color 0.2s ease-in-out;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1300px;
+        height: 825px;
+        border: 0;
+        transform: scale(0.246); // 1300px page into the 320px window
+        transform-origin: 0 0;
+        pointer-events: none;
+      }
+    }
+
+    &:hover .preview-frame,
+    &:focus-visible .preview-frame {
+      border-color: var(--global-theme-color);
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .publications .pub-hover-inner {
+    flex-direction: column;
+  }
+
+  .publications .pub-hover-preview {
+    flex-basis: auto;
+  }
+
+  .publications .pub-hover-preview .preview-frame {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .publications li .pub-hover {
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+// Conference entries: a live preview of the venue site (where the site allows
+// framing) beside the role line. Same hover behaviour as the blog index.
+// A still image standing in for a page that cannot be framed live. Fills
+// whatever preview frame it sits in.
+.preview-shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.venue-list {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0.4rem 0 0 !important;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .venue-preview {
+    flex: 0 0 230px;
+    display: block;
+    text-decoration: none;
+    transition: flex-basis 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .preview-frame {
+    position: relative;
+    display: block;
+    width: 230px;
+    height: 146px;
+    overflow: hidden;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    background: #fff;
+    will-change: width, height;
+    transition:
+      border-color 0.25s ease-in-out,
+      box-shadow 0.3s ease-in-out,
+      width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+      height 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1300px;
+      height: 825px;
+      border: 0;
+      transform: scale(0.177);
+      transform-origin: 0 0;
+      pointer-events: none;
+      transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+  }
+
+  // Sites that refuse framing (WSDM sends X-Frame-Options) use a still of the
+  // page instead of a live iframe; it fills the same frame.
+  .preview-shot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .preview-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #1c1c1d;
+    background: #f4f4f6;
+
+    small {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #5d5d66;
+    }
+  }
+
+  .venue-preview:hover {
+    flex-basis: 420px;
+  }
+
+  .venue-preview:hover .preview-frame,
+  .venue-preview:focus-visible .preview-frame {
+    border-color: var(--global-theme-color);
+    width: 420px;
+    height: 266px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  .venue-preview:hover .preview-frame iframe,
+  .venue-preview:focus-visible .preview-frame iframe {
+    transform: scale(0.323);
+  }
+
+  .venue-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .venue-title {
+    color: var(--global-text-color);
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+
+  .venue-sub {
+    margin: 0.2rem 0 0;
+    color: var(--global-text-color-light);
+  }
+}
+
+@media (max-width: 575px) {
+  .venue-list li {
+    flex-direction: column;
+  }
+
+  .venue-list .venue-preview,
+  .venue-list .preview-frame {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venue-list .venue-preview,
+  .venue-list .preview-frame,
+  .venue-list .preview-frame iframe {
+    transition: none;
+  }
+}
+
+// One step down from the default h2, for in-page section headings.
+h2.heading-sm {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+// Blog index. Each entry pairs a live (non-interactive) preview of the linked
+// page with the title, excerpt and meta line. The preview is a scaled-down
+// iframe behind a transparent link, so clicking anywhere opens the real page.
+.blog-links {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  max-width: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .blog-preview {
+    flex: 0 0 360px;
+    display: block;
+    text-decoration: none;
+    transition: flex-basis 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: 0s;
+  }
+
+  .preview-frame {
+    position: relative;
+    display: block;
+    width: 360px;
+    height: 228px;
+    overflow: hidden;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    background: #fff;
+    // The frame grows by actually changing size (not by scaling over the page),
+    // so the text column reflows around it. The left edge stays put.
+    will-change: width, height;
+    transition:
+      border-color 0.25s ease-in-out,
+      box-shadow 0.3s ease-in-out,
+      width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+      height 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: 0s;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1300px; // rendered at desktop width, then scaled into the window
+      height: 825px;
+      border: 0;
+      transform: scale(0.277);
+      transform-origin: 0 0;
+      pointer-events: none; // the wrapping link handles the click
+      transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      transition-delay: 0s;
+    }
+  }
+
+  // On hover the preview lifts out of the row, scales up and overlays the page,
+  // while the other entries dim so it takes centre stage.
+  li {
+    position: relative;
+  }
+
+  .blog-preview:hover,
+  .blog-preview:focus-within {
+    z-index: 5;
+  }
+
+  // Expansion starts as soon as the pointer lands on the preview.
+  .blog-preview:hover,
+  .blog-preview:focus-within {
+    flex-basis: 620px;
+    transition-delay: 0s;
+  }
+
+  .blog-preview:hover .preview-frame,
+  .blog-preview:focus-visible .preview-frame {
+    border-color: var(--global-theme-color);
+    width: 620px;
+    height: 393px;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.26);
+    transition-delay: 0s;
+  }
+
+  .blog-preview:hover .preview-frame iframe,
+  .blog-preview:focus-visible .preview-frame iframe {
+    transform: scale(0.477); // 1300px page rendered into the 620px frame
+    transition-delay: 0s;
+  }
+
+  &:hover li:not(:hover) {
+    opacity: 0.45;
+    transition-delay: 0s;
+  }
+
+  li {
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0s;
+  }
+
+  .blog-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .blog-title {
+    display: inline-block;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--global-text-color);
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+
+  .blog-excerpt {
+    margin: 0.35rem 0 0;
+    color: var(--global-text-color-light);
+    line-height: 1.5;
+  }
+
+  .blog-meta {
+    margin-top: 0.45rem;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+
+    .sep {
+      margin: 0 0.5rem;
+      opacity: 0.6;
+    }
+
+    .blog-tag {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .blog-links li {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .blog-links .blog-preview,
+  .blog-links .preview-frame {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-links .blog-preview,
+  .blog-links .preview-frame,
+  .blog-links .preview-frame iframe {
+    transition: none;
+  }
+
+  .blog-links:hover li:not(:hover) {
+    opacity: 1;
+  }
+}
+
+// Theme toggle: fade between sun / moon / system glyphs
+#light-toggle {
+  i {
+    transition:
+      color 0.25s ease-in-out,
+      opacity 0.25s ease-in-out;
+  }
+
+  &:hover i {
+    color: var(--global-theme-color);
+  }
+}
+
+// Name heading at the top of the intro page
+.intro-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 575px) {
+  .intro-name {
+    font-size: 2rem;
+  }
+}
+
+
+// Theme toggle: fade between sun / moon / system glyphs
+#light-toggle {
+  i {
+    transition:
+      color 0.25s ease-in-out,
+      opacity 0.25s ease-in-out;
+  }
+
+  &:hover i {
+    color: var(--global-theme-color);
+  }
+}
+
+// Name heading at the top of the intro page
+.intro-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 575px) {
+  .intro-name {
+    font-size: 2rem;
+  }
+}
+
+
+// Theme toggle: fade between sun / moon / system glyphs
+#light-toggle {
+  i {
+    transition:
+      color 0.25s ease-in-out,
+      opacity 0.25s ease-in-out;
+  }
+
+  &:hover i {
+    color: var(--global-theme-color);
+  }
+}
+
+// Name heading at the top of the intro page
+.intro-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 575px) {
+  .intro-name {
+    font-size: 2rem;
+  }
+}
+
+// Blog list: one line per entry
+// Theme toggle: fade between sun / moon / system glyphs
+#light-toggle {
+  i {
+    transition:
+      color 0.25s ease-in-out,
+      opacity 0.25s ease-in-out;
+  }
+
+  &:hover i {
+    color: var(--global-theme-color);
+  }
+}
+
+// Name heading at the top of the intro page
+.intro-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 575px) {
+  .intro-name {
+    font-size: 2rem;
+  }
+}
+
+// Project link cards
+.project-links {
+  .project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    h4 {
+      margin: 0.7rem 0 0.2rem;
+      font-size: 1.1rem;
+      color: var(--global-text-color);
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: var(--global-text-color-light);
+      margin: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      h4 {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+}
+
+// Contact icons sit under the profile photo, smaller than the page default.
+.profile .profile-social {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 0.5rem;
+
+  .contact-icons {
+    font-size: 1.15rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      margin: 0;
+
+      img,
+      svg {
+        width: 1.15rem;
+        height: 1.15rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .contact-note {
+    font-size: 0.85rem;
+    margin: 0;
+    white-space: nowrap;
+
+    a {
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+.intro-screen {
+  padding-top: 0.25rem;
+
+  .intro-inner {
+    width: 100%;
+  }
+}
+
+// Two columns of equal height: the bio on the left, the photo column on the
+// right. The logo panel is pushed to the bottom of its column so it ends level
+// with the last line of the bio.
+@media (min-width: 576px) {
+  .intro-inner {
+    display: flex;
+    align-items: stretch;
+    gap: 1.8rem;
+
+    .intro-text {
+      flex: 1 1 auto;
+      min-width: 0;
+      order: 1;
+    }
+
+    .profile {
+      flex: 0 0 30%;
+      width: 30%;
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .profile .affiliations {
+      margin-top: 0.55rem;
+    }
+  }
+}
+
+// The about page is sized to exactly one viewport: the intro keeps its natural
+// height and the news list takes the remaining space, scrolling inside itself,
+// so the page itself never scrolls.
+@media (min-width: 576px) {
+  .about-screen {
+    height: calc(100vh - 4.5rem);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    h2 {
+      margin-top: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .news {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news .table-responsive {
+      flex: 1;
+      min-height: 0;
+      max-height: none;
+      overflow-y: auto;
+    }
+  }
+}
+
 p,
 h1,
 h2,
@@ -208,7 +1068,8 @@ ul.task-list input[type="checkbox"] {
 }
 
 .profile.float-right {
-  margin-left: 1rem;
+  margin-left: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .profile.float-left {

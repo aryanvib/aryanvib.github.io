@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined the Model Risk and Management Group as a Data Science Intern at American Express
+Joined the Model Risk and Management Group as a Data Science Intern at American Express.

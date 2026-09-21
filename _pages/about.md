@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: 
 profile:
@@ -11,25 +11,20 @@ profile:
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+affiliations: true # shows the institution logo strip
 
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-MSCS **UMD College Park**. B.Tech **IIT Bombay**. 
-Ex: Data Science **AMEX**, Research Intern **Brown University**.
+I am Aryan Bhosale, a MSCS graduate student in the [Department of Computer Science](https://www.cs.umd.edu/) at the University of Maryland (UMD), College Park, where I work with [Prof. Dinesh Manocha](https://www.cs.umd.edu/people/dmanocha) (GAMMA Lab) and [Prof. Ramani Duraiswami](https://www.cs.umd.edu/people/ramanid) (PIRL Lab). My research interests lie in multimodal generative models, full-duplex voice agents, and music generation models.
 
-I am a MSCS graduate student in the [Department of Computer Science](https://www.cs.umd.edu/) at the University of Maryland (UMD), College Park. My recent work has focused on **multimodal AI**, more specifically in the space of **Deep Generative Models** (Diffusion Models, GANs) and **model understanding**. Currently, I'm working with [Prof. Dinesh Manocha](https://www.cs.umd.edu/people/dmanocha) (GAMMA Lab) and [Prof. Ramani Duraiswami](https://www.cs.umd.edu/people/ramanid) (PIRL Lab). 
+I am an Intern at [Centific AI Research](https://www.centific.com/) where I work on full-duplex voice agents and unified audio models. I also collaborate with the Advanced Technology Group at [Dolby Laboratories](https://www.dolby.com/) on building multimodal music generation models.
 
-I graduated from the [Indian Institute of Technology, Bombay (IITB)](https://www.iitb.ac.in/) in 2025 where I worked with [Prof. Biplab Banerjee](https://biplab-banerjee.github.io/) (Deep Visual Computing Lab) and [Prof. Preethi Jyothi](https://www.cse.iitb.ac.in/~pjyothi/) (CSALT Lab). My previous work involved:
-  - using Deep Generative Models (VAEs, Diffusion Models, DiTs) for generative replay/distillation in anomaly detection for continual learning settings
-  - improving audio-visual (AV) alignment for clever scene segmentation and AV retrieval
-  - leveraging neural audio codecs to develop semnatically-rich discrete audio representations
-
-I was a **Research Intern** with [Prof. Miguel Bessa's](https://vivo.brown.edu/display/mbessa) group (Bessa Research Group) at Brown University in Summer 2023 where I worked on leveraging Diffusion Models for topology optimization.
+I completed my undergraduate studies at [IIT Bombay](https://www.iitb.ac.in/) advised by [Prof. Preethi Jyothi](https://www.cse.iitb.ac.in/~pjyothi/) and [Prof. Biplab Banerjee](https://biplab-banerjee.github.io/). In the past, I've had the chance to work as a research intern at Brown University advised by [Prof. Miguel Bessa](https://vivo.brown.edu/display/mbessa) and at American Express.
