@@ -4,31 +4,31 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
   },{id: "nav-publications",
-          title: "publications",
+          title: "Publications",
           description: "in reversed chronological order",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-cv",
-          title: "cv",
-          description: "Here&#39;s a quick look at what I&#39;ve worked on in the past.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
-        },{id: "nav-teaching",
-          title: "teaching",
+        },{id: "nav-blogs",
+          title: "Blogs",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/teaching/";
+            window.location.href = "/blogs/";
+          },
+        },{id: "nav-service",
+          title: "Service",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/service/";
           },
         },{id: "post-a-post-with-plotly-js",
         
@@ -408,7 +408,25 @@ ninja.data = [{
           title: 'Graduated B. Tech (with Hons.) from IIT Bombay with dual minor degrees in...',
           description: "",
           section: "News",},{id: "news-joined-as-a-ms-cs-graduate-student-at-umd-college-park",
-          title: 'Joined as a MS CS graduate student at UMD College Park!',
+          title: 'Joined as a MS CS graduate student at UMD College Park.',
+          description: "",
+          section: "News",},{id: "news-started-collaborating-with-dolby-laboratories-as-a-research-collaborator",
+          title: 'Started collaborating with Dolby Laboratories as a Research Collaborator.',
+          description: "",
+          section: "News",},{id: "news-released-video-robin-a-video-to-music-generation-model",
+          title: 'Released Video-Robin, a video-to-music generation model .',
+          description: "",
+          section: "News",},{id: "news-joined-centific-ai-research-as-a-research-intern",
+          title: 'Joined Centific AI Research as a Research Intern.',
+          description: "",
+          section: "News",},{id: "news-released-torus-a-self-coherence-benchmark-for-unified-audio-models",
+          title: 'Released TORUS, a self-coherence benchmark for unified audio models .',
+          description: "",
+          section: "News",},{id: "news-released-duplexworld-a-benchmark-for-speech-to-speech-voice-agents",
+          title: 'Released DuplexWorld, a benchmark for speech-to-speech voice agents .',
+          description: "",
+          section: "News",},{id: "news-vibe-was-accepted-at-emnlp-2026",
+          title: 'VIBE was accepted at EMNLP 2026 .',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
@@ -456,13 +474,6 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
-        id: 'social-email',
-        title: 'email',
-        section: 'Socials',
-        handler: () => {
-          window.open("mailto:%61%72%79%61%6E%76%69%62@%75%6D%64.%65%64%75", "_blank");
-        },
-      },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
@@ -474,7 +485,7 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=xlILxRIAAAAJ&hl", "_blank");
+          window.open("https://scholar.google.com/citations?user=5t-YHCoAAAAJ", "_blank");
         },
       },{
       id: 'light-theme',
