@@ -28,3 +28,5 @@ I am Aryan Bhosale, a MSCS graduate student in the [Department of Computer Scien
 I am an Intern at [Centific AI Research](https://www.centific.com/) where I work on full-duplex voice agents and unified audio models. I also collaborate with the Advanced Technology Group at [Dolby Laboratories](https://www.dolby.com/) on building multimodal music generation models.
 
 I completed my undergraduate studies at [IIT Bombay](https://www.iitb.ac.in/) advised by [Prof. Preethi Jyothi](https://www.cse.iitb.ac.in/~pjyothi/) and [Prof. Biplab Banerjee](https://biplab-banerjee.github.io/). In the past, I've had the chance to work as a research intern at Brown University advised by [Prof. Miguel Bessa](https://vivo.brown.edu/display/mbessa) and at American Express.
+
+Please find the latest version of my Résumé/CV [here](/cv/).
